@@ -5,7 +5,7 @@
   <form role="form" ng-submit="addTodo()">
     <div class="row">
       <div class="input-group">
-        <input class="form-control" type="text" placeholder="What needs to be done?" ng-model="todo">
+        <input class="form-control" type="text" placeholder="What needs to be done?" ng-model="mediator.todo">
         <span class="input-group-btn">
           <input class="btn btn-primary" type="submit" value="Add">
         </span>
@@ -15,7 +15,7 @@
 
   <!-- - Todos list -->
   <div ui-sortable ng-model="todos">
-    <p class="input-group" ng-repeat="todo in todos" style="padding: 5px 10px; cursor: move;">
+    <p class="input-group" ng-repeat="todo in mediator.todos" style="padding: 5px 10px; cursor: move;">
       <input class="form-control" type="text" ng-model="todo">
       <span class="input-group-btn">
         <button class="btn btn-danger" type="button" ng-click="removeTodo($index)" aria-label="remove">
